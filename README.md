@@ -26,8 +26,8 @@ var div = document.createElement("div");
 
 ## Adicionando Elemento dentro de Outro.
 
-var filho = document.createElement("filho")
-;
+var filho = document.createElement("filho");
+
 filho.innerHTML = "filho";
 
 document.querySelector(".pai").appendChild(filho);
