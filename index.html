@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Easy - JavaScript</title>
+</head>
+<body>
+
+<div id="time-pequeno">Curitiba</div>
+<div id="time-grande">Flamengo</div>	
+
+<div class="urso">Urso1</div>
+<div class="urso">Urso2</div>
+<div class="rato">rato</div>
+
+<br>
+<form></form>
+<button></button>
+
+
+<div id="teste">1</div>
+<div class="teste2">2</div>
+<p>teste 3</p>
+
+
+<div class="js">js1</div>
+<div class="js">js2</div>
+<div id="css">css</div>
+<div>html</div>
+
+<div id="pai">
+	<div class="filho">1</div>
+	<div class="filho">2</div>
+	<div class="filho">3</div>
+</div>	
+<div id="paizao">
+	<div class="filho">alo</div>
+	<div class="filho">oi</div>
+	<div class="filho">ola</div>
+</div>	
+
+<div class="carros">
+	
+</div>
+
+
+
+
+<script type="text/javascript">
+
+	console.log(
+		//com innerHTML pega só o VALOR do elemento DOM. 
+		document.getElementById("time-pequeno").innerHTML,
+		//pega o elemento DOM completo.
+		document.getElementById("time-grande"),
+	)
+
+	console.log(
+		//pega os todas as classes do DOM com o nome Urso, caso precise da especifica. passe o valor dentro do vetor 
+		document.getElementsByClassName("urso")[1]
+
+	)
+
+	console.log(
+		//pega o elemento DOM pelo nome  da TAG
+		document.getElementsByTagName("form")[0]
+	)
+
+	console.log(
+		//com o query selector apenas o primeiro elemento é acessado, ele não retorna array.
+		document.querySelector(".js"),
+		document.querySelector("#css"),
+		document.querySelector("div").innerHTML
+	)
+
+	console.log(
+		//seleciono o ID paizao com getElementById e busco todos as classes filhas com querySelectorAll. 
+		document.getElementById("paizao").querySelectorAll(".filho")
+	)
+
+	// criando elementos HTML no javascript. utiliza-se o document.createElement("nome-elemento");
+	var img = document.createElement("img");
+	img.src="http://lorempixel.com/400/200/";
+	
+	var p = document.createElement("p");
+	p.innerHTML = "lorem ipsum dolor in paragrafo"
+	
+	console.log(
+		img,p
+	)
+
+	// inserindo elementos dentro de outros com o .appendchild
+	var veiculo = document.createElement("p");
+	veiculo.innerHTML = "Astra";
+
+	var veiculo2 = document.createElement("span");
+	veiculo2.innerHTML = "Corsa";
+
+	console.log(
+		document.querySelector(".carros").appendChild(veiculo2),
+		document.querySelector(".carros").appendChild(veiculo),
+		//remove o objeto veiculo2 de dentro da classe .carros
+		document.querySelector(".carros").removeChild(veiculo2)
+	)
+
+	var div = document.createElement("div");
+
+	console.log(
+		div
+	)
+</script>
+</body>
+</html>
