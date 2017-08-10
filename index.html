@@ -42,6 +42,14 @@
 	
 </div>
 
+<div id="linux">
+	
+	<div class="ubuntu">
+		ubuntu
+		<div class="elementaryos">elementary OS</div>
+	</div>
+	<div class="debian">Debian</div>
+</div>
 
 
 
@@ -106,6 +114,13 @@
 
 	console.log(
 		div
+	)
+
+	console.log(
+		//para saber qual o elemnto pai basta utilizar o .parentNode
+		document.querySelector(".elementaryos").parentNode,
+		//elemento acima do pai. assim sucessivamente.
+		document.querySelector(".elementaryos").parentNode.parentNode
 	)
 </script>
 </body>

@@ -37,3 +37,10 @@ document.querySelector(".pai").appendChild(filho);
 ## Removendo Elemento de dentro de Outro.
 
 document.querySelector(".pai").removeChild(filho);
+
+
+## Visualizando um nível acima ou mais
+
+document.querySelector(".pai").parentNode
+
+document.querySelector(".pai").parentNode.parentNode
