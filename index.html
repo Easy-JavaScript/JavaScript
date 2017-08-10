@@ -122,6 +122,58 @@
 		//elemento acima do pai. assim sucessivamente.
 		document.querySelector(".elementaryos").parentNode.parentNode
 	)
+
+	// criando um OBJETO 
+	var carro = {
+		placa: 'hux-4400',
+		modelo: 'Sedã',
+		marca: 'Hyundai',
+		opc:{
+			cambio: 'automatic',
+			combustivel: 'flex'
+		},
+		"outra-coisa": "teste"
+	};
+	// acessando os valores do objeto
+	console.log(carro["outra-coisa"], carro.placa);
+
+	// arrays pode-se utilizar strings,number,objetos etc.
+
+	var array = ['bruno', 24, {nome: 'mundo'}];
+
+	console.log(array[2]);
+
+	var PRONTUARIO = 1;
+	var array = ["bruno",["dados",["outros"]]];
+
+	console.log(array[PRONTUARIO][1][0]);
+
+	// Operadores Condicionais
+	var filho = 'bruno';
+	var pai = 'jose';
+
+	if('jose' == filho){
+		console.log("verdade");
+	}else if('jose' == pai){
+		console.log('sim é pai verdade');
+	}else{
+		console.log('querido, fail');
+	}
+
+
+	var bruno = 'bruno';
+
+	switch (bruno) {
+		case 'tiago':
+			console.log('é o tiago');
+			break;
+		case 'maria':
+			console.log('é o bruno');
+			break;
+		default:
+			console.log('olha não é nenhum');
+			break;
+	}
 </script>
 </body>
 </html>
