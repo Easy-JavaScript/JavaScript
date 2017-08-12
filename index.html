@@ -51,7 +51,15 @@
 	<div class="debian">Debian</div>
 </div>
 
+	<div class="tec">javascript</div>
+	<div class="tec">react</div>
+	<div class="tec">css</div>
+	<div class="tec">html</div>
 
+	<div class="info">casa</div>
+	<div class="info">carro</div>
+	<div class="info">pessoa</div>
+	<div class="info">predio</div>
 
 <script type="text/javascript">
 
@@ -174,6 +182,90 @@
 			console.log('olha não é nenhum');
 			break;
 	}
+
+
+
+	var js = document.getElementsByClassName('tec');
+
+	for (let i = 0; i < js.length; i++) {
+		let txt = js[i].innerHTML;
+		js[i].innerHTML = 'curso ' + txt + ' js';
+	}
+
+	var array = ['casa','dado','elefante','faca'];
+
+	// o forEach só funciona com array, não funciona com htmlColection.
+	array.forEach( function(element, index) {
+		if(element === 1){
+			array[index] = 'vira outra coisa';
+		}
+	})
+	console.log(array);
+
+	var array2 =['menino','menina','boneco'];
+
+	var nova = array2.map( function(element, index){
+		if(element === 1){
+			element = 'outra coisa';
+		}
+		return element;
+	})
+	console.log(nova);
+
+
+	var i = 0;
+
+	while (i < 5) {
+		console.log('oi');
+
+		i++;
+	}
+
+
+
+	function nomeFuncao(a, b){
+		r = a * b;
+		return r;
+	}
+
+	nomeFuncao();
+
+
+	var pessoa ={
+		nome: 'bruno',
+		idade: 22,
+		prof: 'dev',
+		cidade: 'ce'
+	};
+
+	// function outraPessoa(nome,idade,prof,cidade){
+	// 	pessoa.nome  = nome;
+	// 	pessoa.idade = idade;
+	// 	pessoa.prof  = prof;
+	// 	pessoa.cidade = cidade;
+	// }
+	//   ou
+
+	function outraPessoa(novoObjeto){
+		pessoa = novoObjeto;
+	}
+
+
+
+	//evento onload
+
+	window.onload = function(){
+		alert("pagina carregou");
+	}
+	alert('pagina carregada');
+
+
+
+
+
+
+
+
 </script>
 </body>
 </html>

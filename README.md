@@ -129,3 +129,76 @@ switch (time){
 		break;
 
 }
+
+---------------------------------------------
+
+## Loops
+
+
+### Utilizando For 
+
+var js = document.getElementsByClassName('tec');
+
+	for (let i = 0; i < js.length; i++) {
+		let txt = js[i].innerHTML;
+		js[i].innerHTML = 'curso ' + txt + ' js';
+	}
+
+--------------------------------------------
+
+### Utilizando o forEach
+
+	var array = ['casa','dado','elefante','faca'];
+
+	// o forEach só funciona com array, não funciona com htmlColection.
+	array.forEach( function(element, index) {
+		if(element === 1){
+			array[index] = 'vira outra coisa';
+		}
+	})
+	console.log(array);
+
+-----------------------------------------
+
+	### Utilizando o map
+
+	var array2 =['menino','menina','boneco'];
+
+	var nova = array2.map( function(element, index){
+		if(element === 1){
+			element = 'outra coisa';
+		}
+		return element;
+	})
+	console.log(nova);
+
+-----------------------------------------
+
+	### Utilizando While
+
+	var i = 0;
+
+	while (i < 5) {
+		console.log('oi');
+
+		i++;
+	}
+
+
+
+## Carregando a página
+
+window.onload = function(){
+	alert("pagina carregou");
+}
+
+
+## Funções
+
+function nomeFuncao(a, b){
+		r = a * b;
+		return r;
+	}
+
+//executando a função
+nomeFuncao();
