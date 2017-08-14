@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+
+
+<script type="text/javascript">
+// single line comment
+/*
+	this is a long review multiline
+*/	
+
+// tipos de saidas
+document.write(hello('bruno'));
+alert(hello('bruno'));
+console.log(hello('bruno'));
+
+function hello(name){
+	return "Hello " + name;
+}
+
+// variáveis
+
+var globaal = 'variavel global  var';
+
+if(true){
+	let local = 'variavel local  let';
+ 	console.log(local);
+}
+ console.log(globaal);
+
+
+// concatenando 'string' com number.
+var x = '20' + 3;
+console.log(x);
+//convertendo 'string' p/ inteiro.
+var y = parseInt('20') + 3;
+console.log(y);
+//convertendo 'string' p/ float.
+var z = parseFloat('10.5') * 10;
+console.log(z);
+
+
+
+do {
+	var nome = prompt('Qual seu nome');
+} while (nome == null || nome == "");
+alert('Seu nome é ' + nome);
+
+
+	var anoNasc;
+	var idade;
+	const anoAtual = 2017;
+
+do{
+	anoNasc = prompt('Qual ano voce nasceu');
+} while (this == null || this == "");
+	idade = anoAtual - anoNasc;
+alert(nome + 'Sua idade é ' + idade);
+
+
+
+
+
+
+</script>
+</body>
+</html>

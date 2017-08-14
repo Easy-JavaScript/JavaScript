@@ -3,6 +3,47 @@
 <head>
 	<title>Easy - JavaScript</title>
 </head>
+
+<style type="text/css">
+	
+	.mystyle {
+    width: 300px;
+    height: 50px;
+    background-color: coral;
+    color: white;
+    font-size: 25px;
+}
+
+.newClassName {
+    width: 400px;
+    height: 100px;
+    background-color: lightblue;
+    text-align: center;
+    font-size: 25px;
+    color: navy;
+    margin-bottom: 10px;
+}
+
+.javex{
+	width:100%;
+	display: inline-block;
+	background: #000;
+}
+.javex__texto{
+	background: #ccc;
+	color: #fff;
+	padding: 10px;
+}
+.javex__filtro{
+	display: inline-block;
+	width: 100%;
+}
+.javex__filtro ul li{
+	display: inline-block;
+}
+.javex #txt-2,
+.javex #txt-3{ display: none; }
+</style>
 <body>
 
 <div id="time-pequeno">Curitiba</div>
@@ -60,6 +101,53 @@
 	<div class="info">carro</div>
 	<div class="info">pessoa</div>
 	<div class="info">predio</div>
+
+	<h3 id="title">click no botao para ver o evento</h3>
+	<button id="btn-event">Clique aqui</button>
+
+
+
+	
+
+<button onclick="myFunction()">Try it</button>
+
+	<div id="myDIV" class="mystyle">
+		I am a DIV element
+	</div>	
+
+<div class="javex">
+	<div class="javex__filtro">
+		<ul>
+			<li><button id="btn-1">texto01</button></li>
+			<li><button id="btn-2">texto02</button></li>
+			<li><button id="btn-3">texto03</button></li>
+		</ul>
+	</div>
+	<p class="javex__texto" id="txt-1">01 - Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	<p class="javex__texto" id="txt-2">02 - Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	<p class="javex__texto" id="txt-3">03 -Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+
+<select id="linguagens">	
+	<option value="1">php</option>
+	<option value="2">js</option>
+	<option value="3">css</option>
+</select>
 
 <script type="text/javascript">
 
@@ -260,12 +348,39 @@
 	alert('pagina carregada');
 
 
+	// para adicionar qualquer evento(click,doubleclick,hover.etc) utiliza-se o
+	// addEventListener('evento', function(){})
+
+	var btn_event = document.getElementById("btn-event");
+	var title = document.getElementById("title");
+
+	btn_event.addEventListener('click', function(){
+		console.log('click');
+		alert("ola dev");
+		title.remove();
+	})
+
+	
 
 
+	function myFunction() {
+    	document.getElementById("myDIV").classList.toggle("newClassName");
+    	//pode se usar o .classList.add para adicionar classe 
+    	//pode se usar o .classList.remove para remover classe 
+
+	}
 
 
+		var ling = document.getElementById('linguagens');
 
+		ling.addEventListener('change', function(){
+			var options = this.options;
+ 			var itemAtual = this.selectedIndex;
 
+ 			console.log(options[itemAtual].text);
+		})	
+
+	
 </script>
 </body>
 </html>
