@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+	
+</style>
+<body>
+
+    <canvas id="canvas" width="640" height="480"
+      style="border: solid 1px black; margin: 0px auto; display: block;">
+    </canvas>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    var gameOver = false;	
+	var canvas = document.getElementById('canvas');
+	var contexto = canvas.getContext("2d");
+	
+	function desenhaFundo(){
+		//bloco do game
+		contexto.fillStyle = "dimgray";
+		contexto.fillRect(0,0, canvas.width, canvas.height);
+
+		//calçada do topo
+		contexto.fillStyle = "lightgray";
+		contexto.fillRect(0,0, canvas.width, 80);
+
+		//calçada de baixo
+		contexto.fillStyle = "lightgray";
+		contexto.fillRect(0, 400, canvas.width, 80);
+
+		//faixas
+		contexto.fillStyle = "white";
+		for(let i = 0; i < 25; i++){
+			//faixa superios
+			contexto.fillRect(i*30-5, 185, 20, 4);
+			//faixa inferior
+			contexto.fillRect(i*30-5, 280, 20, 4);
+		}
+	}
+
+	var pontos = 0;
+
+    function desenhaPontos() {
+      contexto.fillStyle = "black";
+      contexto.font = "12pt Monospace";
+      contexto.fillText(pontos, 5, 20);
+    }
+
+    function Sprite(caminhoDaImagem, xInicial, yInicial){
+		this.x = xInicial;
+		this.y = yInicial;
+
+		this.imagem = new Image();
+		this.imagem.src = caminhoDaImagem;
+
+		var that = this;
+		this.imagem.onload = function(){
+			that.largura = that.imagem.width;
+			that.altura = that.imagem.height;
+			that.desenhaImagem();
+		}
+
+		this.desenhaImagem = function(){
+			contexto.drawImage(this.imagem, this.x, this.y, this.largura, this.altura);
+		}
+
+		 //movendo os objetos.
+ 
+	    this.move = function(dx, dy) {
+	        this.x += dx;
+	        this.y += dy;
+	        //limites
+	        if(this.x > canvas.width) {
+	            this.x = -this.largura;
+	        } else if(this.x < -this.largura) {
+	            this.x = canvas.width;
+	        }
+	        if(this.y > canvas.height - this.altura + 5) {
+	            this.y -= dy;
+	        } else if(this.y <= -5) {
+	            this.y = canvas.height - this.altura;
+	        }
+	    }
+
+	    //colisão dos objetos
+
+	    this.colidiu = function(outro){
+	        var colidiuNoXTopo = outro.x >= this.x && outro.x <= (this.x + this.largura);
+	        var colidiuNoYTopo = outro.y >= this.y && outro.y <= (this.y + this.altura);
+	        var colidiuNoXBase = (outro.x + outro.largura) >= this.x && (outro.x + + outro.largura) <= (this.x + this.largura);
+	        var colidiuNoYBase = (outro.y + outro.altura) >= this.y && (outro.y + outro.altura) <= (this.y + this.altura);
+	        return (colidiuNoXTopo && colidiuNoYTopo) || (colidiuNoXBase && colidiuNoYBase);
+    	}
+	
+	}
+
+	var formiga = new Sprite("fu.png", 320, 400);
+	
+	formiga.passou = function () {
+   	   if (this.y <= 0) {
+        this.y = canvas.height - this.altura;
+        return true;
+      }
+      return false;
+    }
+ 
+	var raqueteGreen  = new Sprite("Rgreen.png", -10, 300);
+ 
+	var raqueteBlue = new Sprite("Rblue.png", 560, 200);
+ 
+	var raqueteRed  = new Sprite("Rred.png", 10, 100);
+	
+
+	//evento das teclas do teclado
+	document.onkeydown = function(event){
+		if (gameOver) {
+        	return;
+      	}
+
+		switch (event.which) {
+			case 37: //pra esquerda
+				//passado o limite da esquerda, aparecerá à direita
+				formiga.move(-10, 0);
+				break;
+			case 38: // pra cima
+				//passado o limite superior, aparecerá embaixo
+				formiga.move(0, -10);
+				break;
+			case 39: // pra direita
+				//passado o limite da direita, aparecerá à esquerda
+				formiga.move(10, 0);
+				break;
+			case 40: // pra baixo
+				//se o novo y passou o limite inferior, desfaz a soma
+				formiga.move(0, 10);
+				break;
+		}
+		if (formiga.passou()) {
+        	pontos++;
+      	}
+	}
+
+	setInterval(function(){
+		desenhaFundo();
+		desenhaPontos();
+		
+		formiga.desenhaImagem();
+		raqueteGreen.desenhaImagem();
+		raqueteBlue.desenhaImagem();
+		raqueteRed.desenhaImagem();
+		
+		if(gameOver){
+        	contexto.fillStyle = "red";
+        	contexto.font="Bold 80px Sans";
+        	contexto.fillText("GAME OVER", canvas.width/16, canvas.height/2+20);
+        	return;
+    	}
+
+		raqueteGreen.move(7, 0);
+	   	raqueteBlue.move(-5, 0);
+    	raqueteRed.move(10, 0);
+
+    	if(raqueteGreen.colidiu(formiga) || raqueteBlue.colidiu(formiga) || raqueteRed.colidiu(formiga)){ 
+    		gameOver = true; 
+    	}
+
+	},50);
+</script>
+</body>
+</html>

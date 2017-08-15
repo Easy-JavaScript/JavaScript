@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+	#relogio{
+		color: #0ff222;
+		font:bold 30px Arial;
+		text-align: center;
+	}
+</style>
+<body onload="relogio();">
+
+
+
+
+<div id="relogio"></div>
+
+
+<script type="text/javascript">
+
+function relogio(){
+	var data = new Date();
+	var horas = data.getHours();
+	var minutos = data.getMinutes();
+	var segundos = data.getSeconds();
+
+	if (horas < 10) {
+		horas = '0'+horas;
+	}
+	if (minutos < 10) {
+		minutos = '0'+minutos;
+	}
+	if (segundos < 10) {
+		segundos = '0'+segundos;
+	}
+	document.getElementById('relogio').innerHTML = horas+ ':' +minutos+ ':' +segundos;
+	//setInterval irá chamar uma segunda função no caso relogio() passada por parâmetro no intervalo determinado
+}
+window.setInterval('relogio()',1000);
+</script>
+</body>
+</html>
