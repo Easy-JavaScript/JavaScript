@@ -13,25 +13,6 @@
     </canvas>
  
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <script type="text/javascript">
     var gameOver = false;	
 	var canvas = document.getElementById('canvas');
@@ -116,7 +97,7 @@
 	
 	}
 
-	var formiga = new Sprite("fu.png", 320, 400);
+	var formiga = new Sprite("img/fu.png", 320, 400);
 	
 	formiga.passou = function () {
    	   if (this.y <= 0) {
@@ -126,11 +107,11 @@
       return false;
     }
  
-	var raqueteGreen  = new Sprite("Rgreen.png", -10, 300);
+	var raqueteGreen  = new Sprite("img/Rgreen.png", -10, 300);
  
-	var raqueteBlue = new Sprite("Rblue.png", 560, 200);
+	var raqueteBlue = new Sprite("img/Rblue.png", 560, 200);
  
-	var raqueteRed  = new Sprite("Rred.png", 10, 100);
+	var raqueteRed  = new Sprite("img/Rred.png", 10, 100);
 	
 
 	//evento das teclas do teclado
