@@ -212,7 +212,7 @@ Também pode ser pensado que os eventos são notificações JavaScript que permi
 O objetivo dos eventos é responder os acontecimentos de uma página web com o código JavaScript. 
 Vejamos a lista dos principais eventos que essa linguagem possui:
 
-onBlur: é ativado quando o usuário retira o foco da aplicação de um elemento da página. O foco da aplicação é o lugar onde está o cursor.
+**onBlur:** é ativado quando o usuário retira o foco da aplicação de um elemento da página. O foco da aplicação é o lugar onde está o cursor.
 
 onChange: Muda o estado de um elemento de formulário, às vezes não se produz até que o usuário retire o foco da aplicação do elemento.
 
