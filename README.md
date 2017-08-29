@@ -202,3 +202,48 @@ function nomeFuncao(a, b){
 
 //executando a função
 nomeFuncao();
+
+
+## Eventos
+
+Interatividade com o usuário através dos eventos
+Os eventos são mecanismos que se comunicam com as ações que o usuário executa em um determinado documento HTML, de onde provém alguma interatividade. 
+Também pode ser pensado que os eventos são notificações JavaScript que permitem saber quando alguma ação aconteceu. 
+O objetivo dos eventos é responder os acontecimentos de uma página web com o código JavaScript. 
+Vejamos a lista dos principais eventos que essa linguagem possui:
+
+onBlur: é ativado quando o usuário retira o foco da aplicação de um elemento da página. O foco da aplicação é o lugar onde está o cursor.
+
+onChange: Muda o estado de um elemento de formulário, às vezes não se produz até que o usuário retire o foco da aplicação do elemento.
+
+onClick: Quando clicado no botão do mouse sobre um elemento da página, geralmente um botão ou um link.
+
+onFocus: Quando um elemento da página ou a janela recebe o foco da aplicação. Contrário do evento “onblur”.
+
+onKeydown: Gerado no instante que um usuário pressiona uma tecla, independentemente de soltá-la ou não. A produção acontece no momento do clique.
+
+onKeypress: Resultado de uma tecla clicada por um tempo específico. Antes disso, produz-se um “onekeydown” no momento que se pressiona a tecla.
+
+onKeyup: Produzido quando o usuário deixa de apertar uma tecla, ou seja, no momento que libera a tecla.
+
+onLoad: Quando a página e as imagens terminarem de carregar.
+
+onMousedown: Quando o usuário clica sobre um elemento da página, produzindo no momento do clique do botão, independente de estar solto ou não.
+
+onMousemove: Produz-se quando o mouse se move pela página.
+
+onMouseout: Ocorre com a retirada da seta do mouse da área ocupada um elemento da página.
+
+onMouseover: Quando a seta do mouse entra na área ocupada por um elemento da página.
+
+onMouseup: Resulta do momento que o usuário solta o botão do mouse, que previamente havia clicado.
+
+onMove: Ocorre com o movimento da janela do navegador ou um frame.
+
+onResize: Quando a janela do navegador é redimensionada, ou o frame, no caso de que a página os tenha.
+
+onReset: Ocorre quando um usuário clica no botão de reset de um formulário.
+
+onSelect: Executa quando um usuário realiza uma seleção de um elemento de um formulário.
+
+onSubmit: Quando o botão do tipo “submit” envia algum formulário. É executado antes do envio do formulário.
