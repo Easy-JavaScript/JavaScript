@@ -247,3 +247,26 @@ Vejamos a lista dos principais eventos que essa linguagem possui:
 **onSelect:** Executa quando um usuário realiza uma seleção de um elemento de um formulário.
 
 **onSubmit:** Quando o botão do tipo “submit” envia algum formulário. É executado antes do envio do formulário.
+
+
+## A seguir são mostrados os métodos que podem ser usados para percorrer o documento, bem como:
+
+**hasChildNodes** - retorna true se o elemento possui filhos;
+
+**firstChild** - retorna uma referência ao primeiro elemento filho;
+
+**lastChild** - retorna uma referência ao último elemento filho;
+
+**nextSibling** - retorna uma referência ao irmão posterior ao elemento;
+
+**previousSibling** - retorna uma referência ao irmão anterior ao elemento;
+
+**nodeName** - retorna o nome da TAG do elemento (apenas para elementos nó);
+
+**nodeValue** - retorna o valor do elemento (apenas para elementos texto);
+
+**nodeType** - retorna o tipo do elemento;
+
+**parentNode** - retorna uma referência ao elemento pai.
+
+Essas propriedades são a chave para ser capaz de manipular a árvore de documentos para acessar dados específicos do nó.
